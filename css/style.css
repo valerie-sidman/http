@@ -1,0 +1,316 @@
+body {
+  margin: 0;
+  background-color: #D8BBFF;
+}
+
+.container {
+  margin-left: 350px;
+  margin-top: 150px;
+  margin-right: 350px;
+}
+
+.new-ticket-block {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* buttons and time */
+
+.button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.button-block {
+  display: flex;
+  margin-right: 10px;
+}
+
+.btn-adding-ticket {
+  height: 60px;
+  width: 260px;
+  border: 5px solid #DEAAFF;
+  border-radius: 15px;
+  background: #C8E7FF;
+  color: #303030;
+
+  font-size: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  line-height: 0;
+  
+  text-decoration: none;
+  box-shadow: 0 6px 4px -4px rgba(0, 0, 0, .2);
+}
+
+.btn-editing-ticket, .btn-deleting-ticket {
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  margin-right: 10px;
+
+  border: 1px solid #ECBCFD;
+  border-radius: 15px;
+  background: #D0D1FF;
+
+  color: #303030;
+  cursor: pointer;
+
+  line-height: 0;
+  
+  text-decoration: none;
+  box-shadow: 0 6px 4px -4px rgba(0, 0, 0, .2);
+}
+
+.time-of-creation {
+  margin-right: 10px;
+  padding-top: 4px;
+
+  color: #303030;
+  font-size: 15px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 100;
+  
+  text-decoration: none;
+}
+
+/* ticket */
+
+.ticket-block {
+  margin-top: 20px;
+}
+
+.ticket-list, .form-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ticket {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  justify-content: space-between;
+
+  border: 8px solid #D0D1FF;
+  background: #C0FDFF;
+}
+
+.ticket:nth-child(n+2) {
+  border-top: none;
+}
+
+.ticket-title {
+  margin-left: 80px;
+
+  color: #303030;
+
+  font-size: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ticket-body {
+  width: 1000px;
+}
+
+.ticket-description {
+  margin-left: 80px;
+
+  color: #303030;
+
+  font-size: 15px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 100;
+  
+  text-decoration: none;
+}
+
+/* checkbox */
+
+.checkbox {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+  margin: 0;
+}
+
+.ticket-content {
+  display: flex;
+  position: relative;
+	padding: 0 0 0 90px;
+	cursor: pointer;
+}
+
+.ticket-content:before {
+	content: '';
+	position: absolute;
+	top: -6px;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	width: 35px;
+  height: 35px;
+  margin-left: 25px;
+
+  border: 2px solid #ECBCFD;
+	border-radius: 20px;
+	background: #ffffff;
+	box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+	transition: .2s;
+}
+
+.checkbox:checked + .ticket-content:before {
+  content: '\02714';
+  color: #303030;
+  background: #FFCBF2;
+}
+
+/* modal */
+
+.new-ticket-card, .editing-card, .remove-card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+
+  width: 450px;
+  height: 300px;
+
+  border: 10px solid #D0D1FF;
+	border-radius: 20px;
+  background: #ECBCFD;
+}
+
+.modal-card-title {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+
+  color: #303030;
+
+  font-size: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  
+  text-decoration: none;
+}
+
+.form-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.form-item {
+  display: flex;
+  flex-wrap: wrap;
+  
+  color: #303030;
+
+  font-size: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 400;
+  
+  text-decoration: none;
+}
+
+.name-field{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.field {
+  width: 400px;
+
+  border: 5px solid #D0D1FF;
+	border-radius: 10px;
+}
+
+.short-field {
+  height: 30px;
+}
+
+.detailed-field {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  resize: none;
+
+  height: 80px;
+}
+
+.short-field, .detailed-field {
+  padding-left: 5px;
+  padding-right: 5px;
+
+  color: #303030;
+  font-size: 15px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 100;
+  
+  text-decoration: none;
+}
+
+.modal-buttons {
+  margin-left: 215px;
+  margin-top: 8px;
+}
+
+.btn-canceling, .btn-ok {
+  height: 35px;
+  width: 100px;
+
+  border: 5px solid #D8BBFF;
+  border-radius: 5px;
+  background-color: #D0D1FF;
+  
+  color: #303030;
+  font-size: 15px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 400;
+  
+  text-decoration: none;
+  box-shadow: 0 6px 4px -4px rgba(0, 0, 0, .2);
+}
+
+.btn-canceling:active, .btn-ok:active {
+  box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+	transition: .2s;
+}
+
+.btn-ok {
+  margin-left: 5px;
+}
+
+.remove-card {
+  height: 150px;
+}
+
+.remove-description {
+  margin: 0;
+  padding-left: 8px;
+  padding-top: 10px;
+
+  color: #303030;
+  font-size: 15px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 100;
+  
+  text-decoration: none;
+}
+
+.modal-inactive {
+  display: none;
+}
