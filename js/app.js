@@ -171,6 +171,7 @@ function updateTickets() {
 
 updateTickets();
 
+// Создание нового тикета
 newTicketBtn.addEventListener('click', (e) => {
   e.preventDefault();
   newTicketCard.classList.remove('modal-inactive');
